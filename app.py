@@ -66,7 +66,7 @@ def ssh_process():
                     filename=tmp.name)
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(INPUT_HOST, port=INPUT_PORT, username=INPUT_USER,
-                        pkey=p_key, password=INPUT_PASS,
+                        pkey=p_key,
                         timeout=convert_to_seconds(INPUT_CONNECT_TIMEOUT))
 
             stdin, stdout, stderr = ssh.exec_command(command_str)
